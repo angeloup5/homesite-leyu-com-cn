@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>PG娱乐 · 站点印象与说明</title>
+  <style>
+    /* 基础重置与字体 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f7f6f2;
+      color: #1f2a3a;
+      line-height: 1.7;
+    }
+
+    /* 深色头图 Hero */
+    .hero {
+      background: linear-gradient(145deg, #0b1421 0%, #1d2a3b 100%);
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #c7a45e, #e2c78a, #c7a45e);
+      opacity: 0.6;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: #e9dfc7;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .subhead {
+      font-size: 1.05rem;
+      color: #a9b7c9;
+      max-width: 600px;
+      margin: 0.5rem auto 1.2rem;
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .hero .deco-line {
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      background: #c7a45e;
+      margin: 0.25rem auto 0.8rem;
+    }
+
+    /* 正文主区域 */
+    .content-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    /* 卡片式分段 */
+    .section-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    }
+
+    .section-card h2 {
+      font-size: 1.35rem;
+      font-weight: 450;
+      color: #1f2a3a;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #ece7da;
+      display: inline-block;
+      letter-spacing: 0.02em;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+      color: #2e3b4b;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-link {
+      color: #a17f3f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .highlight-link:hover {
+      color: #7b5f2c;
+      border-bottom-color: #b5954e;
+    }
+
+    .soft-meta {
+      color: #5b6b7b;
+      font-size: 0.9rem;
+      background: #f3f1ea;
+      padding: 0.6rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #5d6b7a;
+      background: #f3f1ec;
+      padding: 0.9rem 1.2rem;
+      border-radius: 18px;
+      border-left: 3px solid #dac292;
+      margin: 1.2rem 0 0;
+    }
+
+    .faq-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.8rem;
+      margin-top: 0.8rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed #dbd5c6;
+    }
+
+    .faq-mini .q-item {
+      flex: 1 1 200px;
+    }
+
+    .faq-mini .q-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #3a4a5a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-mini .q-item span {
+      font-size: 0.88rem;
+      color: #596878;
+    }
+
+    /* 页尾 */
+    .page-footer {
+      background: #eae6db;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid #d5cebd;
+    }
+
+    .page-footer p {
+      font-size: 0.9rem;
+      color: #3e4e5c;
+      max-width: 600px;
+      margin: 0 auto 0.3rem;
+    }
+
+    .page-footer .small-muted {
+      color: #6a7a88;
+      font-size: 0.8rem;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .content-wrap {
+        padding: 1.8rem 1rem 2.5rem;
+      }
+
+      .section-card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .section-card h2 {
+        font-size: 1.2rem;
+      }
+
+      .faq-mini {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding: 2.8rem 1rem 2.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <div class="deco-line"></div>
+    <h1>PG娱乐 · 站点印象</h1>
+    <p class="subhead">一个聚合丰富内容的线上空间，从日常了解到简单探索，保持自己的节奏。</p>
+  </header>
+
+  <!-- 正文区：三段自然介绍 + 补充 -->
+  <main class="content-wrap">
+
+    <!-- 第一段：背景说明 + 站点介绍 -->
+    <div class="section-card">
+      <h2>关于 PG娱乐</h2>
+      <p>如果你刚接触 <a href="https://m-pgyule.com" class="highlight-link">PG娱乐</a>，可能会好奇它到底是一个什么样的站点。简单来说，它呈现了多种多样的内容模块，涵盖休闲、资讯、互动等方向。没有刻意的标签，更像一个开放的线上聚合地。站内内容保持更新，不同板块有各自的节奏——这也是它吸引不少用户常来看看的原因。</p>
+      <p>从页面布局到信息分类，整体风格偏向直观和清爽。不需要复杂的学习过程，打开就能找到自己感兴趣的部分。对于想要放松或者简单浏览的人来说，这种低门槛的体验挺友好的。</p>
+      <div class="soft-meta">站点方向 · 内容聚合 · 日常陪伴</div>
+    </div>
+
+    <!-- 第二段：可信说明 + 日常使用场景 -->
+    <div class="section-card">
+      <h2>可信与氛围</h2>
+      <p>任何一个线上站点，信任感都是慢慢建立的。PG娱乐 在内容筛选和展示上保持了一定的克制，没有过度营销或浮夸的引导。页面的各个入口清晰，信息层级分明，你能很快找到自己想去的板块。同时，站点也注重基础的用户体验——响应速度、适配移动端、内容分类合理，这些细节构成了它让人安心的底色。</p>
+      <p>很多人习惯在碎片时间打开它，看看更新，或者简单翻翻感兴趣的内容。它不强调必须完成什么任务，更像一个可以随时加入、随时离开的空间。这种轻松感，反而让不少人愿意待得更久一些。</p>
+      <div class="small-note">
+        ⚡ 一点观察：站内内容持续迭代，但始终围绕着「提供有价值的信息和轻松的浏览感」这个核心。没有突兀的广告轰炸，也没有让人困惑的跳转。
+      </div>
+    </div>
+
+    <!-- 第三段：特点与 FAQ 摘要风格 -->
+    <div class="section-card">
+      <h2>常见印象 & 小问答</h2>
+      <p>根据不少用户的反馈，这里整理了几个大家经常问到的点，或许能帮你更快了解 PG娱乐：</p>
+      <div class="faq-mini">
+        <div class="q-item">
+          <strong>内容更新快吗？</strong>
+          <span>基本保持稳定的更新节奏，不同板块的更新频率略有差异，但整体来看信息比较新鲜。</span>
+        </div>
+        <div class="q-item">
+          <strong>需要注册才能浏览？</strong>
+          <span>大部分内容可以直接访问，部分互动功能可能需要简单的注册，门槛很低。</span>
+        </div>
+        <div class="q-item">
+          <strong>适合用什么设备访问？</strong>
+          <span>手机、平板、电脑都适配得很好，尤其是移动端体验很流畅。</span>
+        </div>
+        <div class="q-item">
+          <strong>内容质量有保障吗？</strong>
+          <span>站点对内容有基本的筛选标准，尽量避免低质或重复的信息，整体观感比较舒服。</span>
+        </div>
+      </div>
+      <p style="margin-top: 1.2rem;">当然，每个人的感受都不一样。最好的方式是自己上去逛一圈，感受一下站点节奏。如果你喜欢干净、不嘈杂、有内容深度的线上空间，<a href="https://m-pgyule.com" class="highlight-link">PG娱乐</a> 或许正对你的胃口。</p>
+    </div>
+
+    <!-- 补一个简短提示卡片，增加丰富度 -->
+    <div class="section-card" style="background: #faf8f4; border: 1px solid #e7dfd0;">
+      <p style="font-size: 0.96rem; font-style: normal; display: flex; align-items: flex-start; gap: 0.6rem;">
+        <span style="font-size: 1.2rem; line-height: 1;">📌</span>
+        <span>如果你已经访问过 PG娱乐，可能会注意到它的页面风格一直在微调，但那种「不打扰」的氛围始终没变。保持好奇，但也保持自己的节奏——这或许是它最让人舒服的地方。</span>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- 页尾访问提示 -->
+  <footer class="page-footer">
+    <p>© 一个安静的站点 · 内容始终在线 · 欢迎随时来逛逛</p>
+    <p class="small-muted">PG娱乐 · 以轻松的方式连接点滴内容</p>
+  </footer>
+
+</body>
+</html>
