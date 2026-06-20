@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 活力与专注</title>
+  <style>
+    /* 重置与全局 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fbe9e0 0%, #f7d4bc 45%, #f3c4a2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    /* 主杂志卡片 */
+    .magazine {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 48px 24px 48px 24px;
+      box-shadow: 0 30px 50px -20px rgba(120, 60, 30, 0.35),
+                  0 8px 20px rgba(0,0,0,0.03);
+      padding: 2rem 2.8rem 3rem;
+      transition: all 0.2s ease;
+    }
+
+    /* 首屏横幅 —— 杂志开篇 */
+    .hero-pull {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-bottom: 2px solid #edd7cb;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-pull h1 {
+      font-size: 3.5rem;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      color: #532e1b;
+      line-height: 1.1;
+    }
+
+    .hero-pull h1 small {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: #885439;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .hero-tagline {
+      background: #d9b7a1;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      color: #2b1a10;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: inset 0 1px 4px rgba(255, 225, 200, 0.7);
+      white-space: nowrap;
+      margin-top: 0.5rem;
+    }
+
+    /* 背景说明区：简洁档案卡片 */
+    .background-note {
+      background: #f7ede6;
+      padding: 1.6rem 2rem;
+      border-radius: 28px;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 2.2rem;
+      border-left: 6px solid #b07d62;
+    }
+
+    .background-note span {
+      font-weight: 500;
+      color: #3b2418;
+      letter-spacing: 0.02em;
+      font-size: 0.95rem;
+    }
+
+    .background-note p {
+      flex: 1;
+      min-width: 200px;
+      color: #2b1c12;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .background-note p a {
+      color: #764d33;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #b4866b;
+      transition: border 0.2s;
+    }
+
+    .background-note p a:hover {
+      border-bottom: 2px solid #532e1b;
+    }
+
+    /* 三段核心介绍 —— 杂志专题体 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem 2rem;
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .feature-item {
+      background: #fcf8f5;
+      border-radius: 32px 16px 32px 16px;
+      padding: 1.8rem 1.6rem 2rem;
+      box-shadow: 0 6px 18px rgba(140, 80, 40, 0.05);
+      transition: transform 0.15s, box-shadow 0.2s;
+      border: 1px solid #f1e0d6;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px -8px rgba(120, 65, 35, 0.15);
+      border-color: #dabbab;
+    }
+
+    .feature-item h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #4b2d1c;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-item h2 i {
+      font-style: normal;
+      background: #b6866c;
+      color: #fdf3ec;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+
+    .feature-item p {
+      color: #3f2b1f;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .feature-item p + p {
+      margin-top: 0.6rem;
+    }
+
+    .feature-item .insight {
+      display: inline-block;
+      background: #e9d5cb;
+      padding: 0.15rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #2f1a0e;
+      margin-top: 0.4rem;
+    }
+
+    /* 页尾提示 —— 杂志 outro */
+    .outro-sign {
+      margin-top: 2.8rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #e7d4c9;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 1.5rem;
+    }
+
+    .outro-sign .closing-note {
+      font-size: 1rem;
+      color: #453023;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .outro-sign .closing-note a {
+      color: #532e1b;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #dbbcac;
+      transition: border-color 0.2s, background 0.15s;
+      padding: 0 2px;
+    }
+
+    .outro-sign .closing-note a:hover {
+      border-bottom-color: #7d4f37;
+      background: #f2e2d9;
+      border-radius: 4px;
+    }
+
+    .outro-sign .faq-mini {
+      background: #e6d4c9;
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      color: #2d1b0f;
+      white-space: nowrap;
+      box-shadow: inset 0 1px 4px #f6e5db;
+    }
+
+    /* 响应式 */
+    @media (max-width: 820px) {
+      .magazine {
+        padding: 1.8rem 1.6rem 2.5rem;
+        border-radius: 36px 16px 36px 16px;
+      }
+
+      .hero-pull {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .hero-pull h1 {
+        font-size: 2.8rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .background-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0.8rem;
+      }
+
+      .magazine {
+        padding: 1.2rem 1rem 2rem;
+      }
+
+      .hero-pull h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.8rem;
+        white-space: normal;
+      }
+
+      .outro-sign {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="magazine">
+    <!-- 首页横幅 hero -->
+    <div class="hero-pull">
+      <h1>
+        MK体育
+        <small>运动视野 · 专业刻度</small>
+      </h1>
+      <div class="hero-tagline"># 竞技脉搏 · 真实触达</div>
+    </div>
+
+    <!-- 背景说明：为什么是MK体育 -->
+    <div class="background-note">
+      <span>⏺ 背景</span>
+      <p><a href="https://homes-mk.com">MK体育</a> 的命名源于对“运动内核”的提炼，不强调宏大叙事，而是聚焦赛事、训练与身体机能之间的逻辑关联。无论是职业赛场还是日常锻炼，其内容框架始终围绕可验证的信息与理性分析展开，避开情绪化渲染。</p>
+    </div>
+
+    <!-- 三段自然介绍（杂志专题风格） -->
+    <div class="feature-grid">
+      <article class="feature-item">
+        <h2><i>◉</i> 赛事拆解</h2>
+        <p>从技战术数据到赛前变量，每场对决都被还原为可理解的片段。不依赖直觉判断，而是通过跑动距离、对抗频率与阵型弹性等指标，推演比赛走向。MK体育 的赛事内容试图为读者提供一种结构化的观看方式，而非简单的结果播报。</p>
+        <span class="insight">数据颗粒度 · 场景还原</span>
+      </article>
+
+      <article class="feature-item">
+        <h2><i>◉</i> 训练逻辑</h2>
+        <p>无论业余爱好者还是进阶选手，训练效率往往取决于对负荷与恢复的理解。这里会梳理力量输出、心率区间与技术打磨之间的关系，并结合实际案例说明周期化安排如何减少损伤风险。所有内容均引用公开研究或一线经验，不制造捷径幻觉。</p>
+        <span class="insight">周期适应 · 实证优先</span>
+      </article>
+
+      <article class="feature-item">
+        <h2><i>◉</i> 装备与环境</h2>
+        <p>场地条件、气候适应及装备选择常常被低估，但它们对运动表现的影响相当具体。从鞋底反馈到面料排汗，再到高原训练的基础原理，MK体育 以功能性为标尺，不夸大产品功效，只呈现可被体感验证的细节。</p>
+        <span class="insight">功能评估 · 体感依据</span>
+      </article>
+    </div>
+
+    <!-- 页尾访问提示 + 轻FAQ摘要 -->
+    <div class="outro-sign">
+      <div class="closing-note">
+        <span style="font-weight: 500;">持续关注 </span>
+        通过 <a href="https://homes-mk.com">MK体育</a> 获取定期更新的运动解析与背景洞察。站点内容保持独立编辑，不受短期热点干扰，适合希望深度理解运动逻辑的读者。
+      </div>
+      <div class="faq-mini">
+        ❓ 常见话题：疲劳管理 / 战术周期 / 动作筛查
+      </div>
+    </div>
+  </div>
+</body>
+</html>
