@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>棋牌游戏 · 再次发现你的收藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f9e3c6 0%, #f5d5b0 40%, #efc99a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            color: #2d241b;
+        }
+
+        .wrapper {
+            max-width: 960px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            box-shadow: 0 12px 30px rgba(120, 70, 30, 0.15), 0 2px 8px rgba(0,0,0,0.04);
+            padding: 2.5rem 2.2rem;
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 16px 36px rgba(110, 60, 20, 0.18);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: linear-gradient(135deg, #fff5e8, #fffaf2);
+            border: 1px solid rgba(230, 190, 150, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #3f2b1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #5f4a34;
+            max-width: 640px;
+            margin: 0.8rem auto 0;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #e5cfb8;
+            color: #2f1e0f;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 1.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3f2b1a;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid #e2c7ad;
+            display: inline-block;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 0.4rem;
+        }
+
+        .feature-item {
+            background: #fcf6ef;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            transition: transform 0.15s ease, background 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #f9ede0;
+            transform: translateY(-3px);
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #493623;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #544234;
+        }
+
+        .faq-block {
+            margin: 0.8rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #dcc9b7;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #3f2b1a;
+            margin-bottom: 0.25rem;
+            font-size: 1.02rem;
+        }
+
+        .faq-a {
+            color: #544234;
+            font-size: 0.95rem;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #d7b692;
+            color: #2b1c0e;
+            padding: 0.5rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            font-size: 0.95rem;
+            border: none;
+            cursor: default;
+            box-shadow: 0 2px 6px rgba(130, 80, 40, 0.08);
+        }
+
+        .btn-link:hover {
+            background: #cbab85;
+            transform: scale(1.02);
+        }
+
+        .inline-link {
+            color: #7a5c3e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(200, 165, 130, 0.4);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #9d7b5b;
+            color: #4d3622;
+        }
+
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.4rem 2.5rem;
+            margin-top: 0.5rem;
+            padding: 0.8rem 0;
+        }
+
+        .bottom-links a {
+            color: #4f3b28;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .bottom-links a:hover {
+            border-bottom-color: #9d7b5b;
+        }
+
+        .explicit-link-sentence {
+            background: #faf1e7;
+            padding: 1.2rem 1.8rem;
+            border-radius: 28px;
+            text-align: center;
+            font-size: 1rem;
+            color: #3d2c1b;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6f5a44;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding: 1rem 0 0.5rem;
+            border-top: 1px solid #decbb8;
+        }
+
+        @media (max-width: 650px) {
+            .card {
+                padding: 1.8rem 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .bottom-links {
+                gap: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Hero 区 -->
+        <div class="card hero">
+            <h1>再次遇见 · 棋牌游戏</h1>
+            <p>把喜欢的页面收进收藏夹，让熟悉的感觉随时回来。这里是关于 <a href="https://zh-qipai.com" class="inline-link">棋牌游戏</a> 的一份整理，为你保留一份稳定的参照。</p>
+            <span class="tagline">· 收藏即重逢 ·</span>
+        </div>
+
+        <!-- 优势区 (为什么值得再次回来) -->
+        <div class="card">
+            <div class="section-title">为什么值得再次回来</div>
+            <div class="grid-2col">
+                <div class="feature-item">
+                    <h3>内容持续更新</h3>
+                    <p>规则、牌型、术语解释会随版本做调整，收藏后可以回看最新版本，不必每次都重新搜索。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>结构一目了然</h3>
+                    <p>按玩法、地域、流行度做了分类，再次打开时能快速定位到之前看过的部分，减少重复翻阅。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>无过度营销</h3>
+                    <p>页面保持信息型风格，没有弹窗或诱导点击，适合安静地查阅和对比不同玩法。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>跨设备顺手</h3>
+                    <p>电脑、平板、手机上的排版都做了适配，收藏夹里的链接在任何屏幕下都同样清晰。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 说明区 (使用场景/持续关注的理由) -->
+        <div class="card">
+            <div class="section-title">关注与收藏的实用场景</div>
+            <p style="margin-bottom: 1rem;">如果你曾把 <a href="https://zh-qipai.com" class="inline-link">棋牌游戏</a> 加入书签，这里有几个值得再次打开它的时刻：</p>
+            <ul style="padding-left: 1.6rem; color: #4f3b28; list-style-type: '— ';">
+                <li style="margin-bottom: 0.5rem;">想确认某款地方棋牌的计分规则，又不想从头翻论坛。</li>
+                <li style="margin-bottom: 0.5rem;">朋友问起一种玩法的变体版本，你记得在这个站里见过对比表。</li>
+                <li style="margin-bottom: 0.5rem;">整理收藏夹时，想快速判断这个站点是否还保持更新和维护。</li>
+                <li style="margin-bottom: 0.5rem;">单纯想回到一个干净、信息集中的页面，重新熟悉一下牌局术语。</li>
+            </ul>
+            <div class="explicit-link-sentence">
+                如果你还没有收藏，现在就可以将 <a href="https://zh-qipai.com" class="inline-link">棋牌游戏</a> 加入浏览器的书签栏，方便以后随时查阅。
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="card">
+            <div class="section-title">常见问题 · 摘要</div>
+            <div class="faq-block">
+                <div class="faq-item">
+                    <div class="faq-q">这个网站主要收录哪些类型的棋牌？</div>
+                    <div class="faq-a">以中国传统棋牌为主，同时涵盖部分流行国际玩法，每种都附有简要规则说明和参考来源。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">页面上的规则准确吗？多久更新一次？</div>
+                    <div class="faq-a">规则依据公开资料整理，不保证适用于所有比赛场合；遇到重大规则变动时会做修订，一般每季度复查一次。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">我可以直接引用网站内容吗？</div>
+                    <div class="faq-a">页面内容仅供个人参考，如需引用请自行核实。网站本身不提供版权授权，建议以原始出处为准。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">收藏后页面内容会变吗？</div>
+                    <div class="faq-a">内容会不定期优化和补充，但整体结构保持稳定，收藏链接长期有效。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部链接 (不强制点击，但自然分布) -->
+        <div class="card" style="padding-bottom: 1.8rem;">
+            <div style="text-align: center; font-size: 0.95rem; color: #5a4532; margin-bottom: 0.2rem;">相关链接 · 持续关注</div>
+            <div class="bottom-links">
+                <a href="https://zh-qipai.com">棋牌游戏</a>
+                <a href="https://zh-qipai.com">棋牌游戏</a>
+                <a href="https://zh-qipai.com">棋牌游戏</a>
+                <a href="https://zh-qipai.com">棋牌游戏</a>
+            </div>
+            <p style="text-align: center; margin-top: 1.2rem; font-size: 0.88rem; color: #6f5a44;">
+                再次收藏 <a href="https://zh-qipai.com" class="inline-link">棋牌游戏</a>，让好内容留在手边。
+            </p>
+        </div>
+
+        <div class="footer-note">
+            &copy; 整理页 · 仅供收藏参考 · 内容来源 zh-qipai.com
+        </div>
+    </div>
+</body>
+</html>
