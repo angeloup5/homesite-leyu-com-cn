@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG娱乐 · 快速了解平台定位</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      line-height: 1.6;
+      color: #1e1e2a;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* Hero 区 */
+    .hero {
+      text-align: center;
+      padding: 72px 20px 48px;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 40px;
+      border: 1px solid #e6e8ec;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #14141f;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      color: #3e3e4a;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #eef0f3;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #2c2c3c;
+      border: 1px solid #d8dbe0;
+    }
+
+    /* 分区卡片通用 */
+    .section-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 28px;
+      margin-bottom: 28px;
+      border: 1px solid #e2e5ea;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eef0f3;
+      color: #12121c;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .feature-item {
+      background: #f7f8fa;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid #e8eaef;
+    }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #1a1a2e;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #3b3b4b;
+    }
+
+    /* 场景列表 */
+    .scene-list {
+      list-style: none;
+    }
+
+    .scene-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #e5e7ec;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .scene-list li:last-child {
+      border-bottom: none;
+    }
+
+    .scene-marker {
+      background: #dde0e6;
+      border-radius: 40px;
+      padding: 0 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #242438;
+      line-height: 1.8;
+      white-space: nowrap;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #1a1a2a;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: #3f3f52;
+    }
+
+    /* 底部 */
+    .footer-links {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-top: 1px solid #e0e3e9;
+      margin-top: 20px;
+    }
+
+    .footer-links p {
+      color: #5a5a6a;
+      font-size: 0.95rem;
+    }
+
+    .legal-note {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #7a7a8a;
+    }
+
+    a {
+      color: #1f2b3e;
+      text-decoration: none;
+      border-bottom: 1px solid #bcc2ce;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    a:hover {
+      border-bottom-color: #1f2b3e;
+      color: #00020c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 20px 16px;
+      }
+
+      .section-card {
+        padding: 24px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 48px 16px 32px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero 区 -->
+    <header class="hero">
+      <h1>一眼看懂 &middot; PG娱乐</h1>
+      <p>
+        如果你正在找一个能快速判断是否适合自己需求的线上娱乐分类站，<br>
+        这里整理了平台的核心用途、常见场景以及你能获得的信息类型。
+      </p>
+      <span class="tagline">定位清晰 · 信息直白</span>
+    </header>
+
+    <!-- 优势区：平台特点 -->
+    <section class="section-card">
+      <div class="section-title">平台特点速览</div>
+      <div class="grid-2col">
+        <div class="feature-item">
+          <strong>内容分类直观</strong>
+          <p>按主题与玩法划分，不用在导航里反复寻找，进入页面就能大致了解结构。</p>
+        </div>
+        <div class="feature-item">
+          <strong>更新节奏稳定</strong>
+          <p>定期补充新内容与活动说明，保持信息时效性，减少过时公告的干扰。</p>
+        </div>
+        <div class="feature-item">
+          <strong>界面偏轻量</strong>
+          <p>没有冗余弹窗，主要依赖文字指引与卡片布局，浏览过程比较顺畅。</p>
+        </div>
+        <div class="feature-item">
+          <strong>适合快速浏览</strong>
+          <p>如果只是想了解当前热门或近期推荐，首页的摘要区能帮你节省时间。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 说明区：用户场景 -->
+    <section class="section-card">
+      <div class="section-title">你在什么情况下会用到这个站</div>
+      <ul class="scene-list">
+        <li>
+          <span class="scene-marker">场景一</span>
+          想找某个类型的娱乐内容，但不想在大型平台中被大量无关信息淹没。
+        </li>
+        <li>
+          <span class="scene-marker">场景二</span>
+          需要快速确认站内是否包含自己感兴趣的板块，比如游戏、影音或活动专题。
+        </li>
+        <li>
+          <span class="scene-marker">场景三</span>
+          希望了解最新上线或推荐，直接通过首页摘要获得概览，不用层层点击。
+        </li>
+        <li>
+          <span class="scene-marker">场景四</span>
+          日常闲逛，保持对娱乐资讯的轻度接触，不追求深度内容。
+        </li>
+      </ul>
+      <p style="margin-top: 18px; font-size: 0.95rem; background: #f4f6fa; padding: 14px 16px; border-radius: 14px;">
+        简单来说，如果你希望快速评估一个娱乐信息站是否对味，<a href="https://entertainmentpg.com">PG娱乐</a> 的首页已经给出了比较直接的答案。
+      </p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="section-card">
+      <div class="section-title">常见疑问摘要</div>
+      <div class="faq-item">
+        <div class="faq-q">这个站主要提供什么？</div>
+        <div class="faq-a">它是一个娱乐分类信息站，聚合了多种休闲主题的内容索引，方便用户按兴趣查看。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">需要注册才能浏览吗？</div>
+        <div class="faq-a">首页及大部分分类页可以直接浏览，部分互动区域可能需要账号，具体参见网站说明。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">内容更新频率如何？</div>
+        <div class="faq-a">站内保持常规更新，热门板块与推荐位会随近期趋势调整，整体节奏适中。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">移动端体验怎么样？</div>
+        <div class="faq-a">页面采用响应式设计，手机与平板都可以正常查看卡片与导航，缩放阅读也较清晰。</div>
+      </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <footer class="footer-links">
+      <p>
+        想直接了解主页全貌？可以前往 <a href="https://entertainmentpg.com">PG娱乐</a> 查看完整内容。
+      </p>
+      <p style="margin-top: 10px;">
+        本站介绍仅用于辅助理解，具体功能以实际页面为准。
+      </p>
+      <div class="legal-note">
+        内容仅供参考 · 请根据自身需求合理使用
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
